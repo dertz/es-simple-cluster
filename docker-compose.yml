@@ -96,6 +96,8 @@ services:
     image: voucher/vouch-proxy:latest
     volumes:
       - ./vouch-proxy:/config
+    # ports:
+    #   - 9090:9090
 
   # Postgres database
   postgres:
