@@ -116,6 +116,13 @@ services:
     image: redis
     ports:
       - 6379:6379
+  # TimescaleDB
+  timescaledb:
+    image: timescale/timescaledb:latest-pg12
+    environment:
+        POSTGRES_PASSWORD: "password"
+    # ports:
+    #     - "9432:5432"
 
   # Prometheus metrics
   prometheus:
@@ -189,7 +196,6 @@ services:
     env_file:
       - ./docker.env
 
-    
 # Volumes are local by default, but could be backed by test/prod datasources
 volumes:
   kafka-data:
